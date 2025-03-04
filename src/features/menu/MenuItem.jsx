@@ -1,10 +1,10 @@
 import { formatCurrency } from "../../utils/helpers";
 
 function MenuItem({ pizza }) {
-  const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const { name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   return (
-    <li>
+    <div>
       <img src={imageUrl} alt={name} />
       <div>
         <p>
@@ -21,7 +21,7 @@ function MenuItem({ pizza }) {
             : <p>Sold out</p>}
         </div>
       </div>
-    </li>
+    </div>
   );
 }
 
