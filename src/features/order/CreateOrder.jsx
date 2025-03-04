@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // https://uibakery.io/regex-library/phone-number
-const isValidPhone = (str) =>
+const isValidPhone = str =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str
   );
@@ -12,22 +12,22 @@ const fakeCart = [
     name: "Mediterranean",
     quantity: 2,
     unitPrice: 16,
-    totalPrice: 32,
+    totalPrice: 32
   },
   {
     pizzaId: 6,
     name: "Vegetale",
     quantity: 1,
     unitPrice: 13,
-    totalPrice: 13,
+    totalPrice: 13
   },
   {
     pizzaId: 11,
     name: "Spinach and Mushroom",
     quantity: 1,
     unitPrice: 15,
-    totalPrice: 15,
-  },
+    totalPrice: 15
+  }
 ];
 
 function CreateOrder() {
@@ -36,7 +36,7 @@ function CreateOrder() {
 
   return (
     <div>
-      <h2>Ready to order? Let's go!</h2>
+      <h2>Ready to order? Let&rsquo;s go!</h2>
 
       <form>
         <div>
@@ -66,7 +66,7 @@ function CreateOrder() {
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
+          <label htmlFor="priority">Want to give your order priority?</label>
         </div>
 
         <div>
