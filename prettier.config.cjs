@@ -1,5 +1,10 @@
-export default {
+/* eslint-disable no-undef */
+module.exports = {
   env: { node: true, browser: true, es6: true },
-  plugins: ["prettier-plugin-tailwindcss"],
+  extends: ["prettier"],
+  plugins: ["prettier"],
   singleQuotes: true,
+  rules: {
+    "prettier/prettier": "error",
+  },
 };
