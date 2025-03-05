@@ -1,12 +1,12 @@
 // Test ID: IIDSAT
 
-import { useLoaderData } from "react-router-dom";
-import { getOrder } from "../../services/apiRestaurant";
+import { useLoaderData } from 'react-router-dom';
+import { getOrder } from '../../services/apiRestaurant';
 import {
   calcMinutesLeft,
   formatCurrency,
-  formatDate
-} from "../../utils/helpers";
+  formatDate,
+} from '../../utils/helpers';
 
 function Order() {
   const order = useLoaderData();
@@ -18,7 +18,7 @@ function Order() {
     priorityPrice,
     orderPrice,
     estimatedDelivery,
-    cart
+    cart,
   } = order;
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
@@ -29,9 +29,7 @@ function Order() {
 
         <div>
           {priority && <span>Priority</span>}
-          <span>
-            {status} order
-          </span>
+          <span>{status} order</span>
         </div>
       </div>
 
@@ -39,24 +37,15 @@ function Order() {
         <p>
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
-            : "Order should have arrived"}
+            : 'Order should have arrived'}
         </p>
-        <p>
-          (Estimated delivery: {formatDate(estimatedDelivery)})
-        </p>
+        <p>(Estimated delivery: {formatDate(estimatedDelivery)})</p>
       </div>
 
       <div>
-        <p>
-          Price pizza: {formatCurrency(orderPrice)}
-        </p>
-        {priority &&
-          <p>
-            Price priority: {formatCurrency(priorityPrice)}
-          </p>}
-        <p>
-          To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
-        </p>
+        <p>Price pizza: {formatCurrency(orderPrice)}</p>
+        {priority && <p>Price priority: {formatCurrency(priorityPrice)}</p>}
+        <p>To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}</p>
       </div>
     </div>
   );
