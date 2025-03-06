@@ -48,26 +48,27 @@ function CreateOrder() {
       <Form method="POST">
         <div>
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input type="text" name="customer" required className="input" />
         </div>
 
         <div>
           <label>Phone number</label>
           <div>
-            <input type="tel" name="phone" required />
+            <input type="tel" name="phone" required className="input" />
           </div>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
         <div>
-          <label>Address</label>
+          <label className="font-semibold">Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input type="text" name="address" required className="input" />
           </div>
         </div>
 
         <div>
           <input
+            className="mx-3 my-2 h-6 w-6 accent-yellow-400 focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             type="checkbox"
             name="priority"
             id="priority"
@@ -86,7 +87,7 @@ function CreateOrder() {
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>
         </div>
-      </Form>   
+      </Form>
     </div>
   );
 }
